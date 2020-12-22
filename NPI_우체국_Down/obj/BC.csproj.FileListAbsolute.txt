@@ -1,0 +1,14 @@
+E:\SVN\Trunk\KukjeSystem\Src\KukJeEtc\레이아웃\BC\BC.dll
+E:\SVN\Trunk\KukjeSystem\Src\KukJeEtc\레이아웃\BC\BC.pdb
+E:\SVN\Trunk\KukjeSystem\Src\KukJeEtc\레이아웃\BC\obj\Release\ResolveAssemblyReference.cache
+E:\SVN\Trunk\KukjeSystem\Src\KukJeEtc\레이아웃\BC\obj\Release\BC.FormSelectReceive.resources
+E:\SVN\Trunk\KukjeSystem\Src\KukJeEtc\레이아웃\BC\obj\Release\BC.csproj.GenerateResource.Cache
+E:\SVN\Trunk\KukjeSystem\Src\KukJeEtc\레이아웃\BC\obj\Release\BC.dll
+E:\SVN\Trunk\KukjeSystem\Src\KukJeEtc\레이아웃\BC\obj\Release\BC.pdb
+E:\SVN\Trunk\KukjeSystem\Src\KukJeEtc\레이아웃\BC\bin\x86\Release\BC.dll
+E:\SVN\Trunk\KukjeSystem\Src\KukJeEtc\레이아웃\BC\bin\x86\Release\BC.pdb
+E:\SVN\Trunk\KukjeSystem\Src\KukJeEtc\레이아웃\BC\obj\x86\Release\ResolveAssemblyReference.cache
+E:\SVN\Trunk\KukjeSystem\Src\KukJeEtc\레이아웃\BC\obj\x86\Release\BC.FormSelectReceive.resources
+E:\SVN\Trunk\KukjeSystem\Src\KukJeEtc\레이아웃\BC\obj\x86\Release\BC.csproj.GenerateResource.Cache
+E:\SVN\Trunk\KukjeSystem\Src\KukJeEtc\레이아웃\BC\obj\x86\Release\BC.dll
+E:\SVN\Trunk\KukjeSystem\Src\KukJeEtc\레이아웃\BC\obj\x86\Release\BC.pdb
