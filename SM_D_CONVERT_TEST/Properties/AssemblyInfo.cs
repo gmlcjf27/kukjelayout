@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("(주)국제정보통신")]
+[assembly: AssemblyCompany("(주)국제")]
 [assembly: AssemblyProduct("SM_D_CONVERT")]
 [assembly: AssemblyCopyright("Copyright (C) (주)국제정보통신 2012")]
 [assembly: AssemblyTrademark("")]
