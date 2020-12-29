@@ -185,6 +185,7 @@ namespace _086_롯데_test
 
                 _dtable.Columns.Add("card_cooperation2");               //dr[80] 묶음번호
                 _dtable.Columns.Add("card_bank_ID");                    //dr[81] 묶음대표
+                _dtable.Columns.Add("card_count");                      //dr[82] 묶음건수
 
                 //2011-12-12 신주소 관련 추가[E]
 
@@ -431,6 +432,7 @@ namespace _086_롯데_test
                     _dr[80] = _encoding.GetString(_byteAry, 1367, 34);
                     //묶음배송대표코드 : Y/N
                     _dr[81] = _encoding.GetString(_byteAry, 1401, 1);
+                    _dr[82] = _encoding.GetString(_byteAry, 1372, 4);
 
 
                     if (_strZipcode != "")

@@ -107,7 +107,7 @@ namespace _001_BC
                 _dtable.Columns.Add("card_zipcode");                          // 우편번호(케리어바코드사용)
                 _dtable.Columns.Add("card_delivery_place_code");
                 _dtable.Columns.Add("card_address_detail");                   // dr[20]
-                _dtable.Columns.Add("customer_type_code");                    // 소지자구분 : 3,4 대리만 배송가능
+                _dtable.Columns.Add("customer_type_code");                    // 소지자구분 : 3,4 대리만 배송가능, 5 = 본인만가능
                 _dtable.Columns.Add("client_release_register");               // 개시유무
                 _dtable.Columns.Add("card_traffic_code");                     // 본인배송구분
                 _dtable.Columns.Add("card_is_for_owner_only");                // 고객발송구분 (본인특송)

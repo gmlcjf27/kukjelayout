@@ -184,11 +184,11 @@ namespace Day_Close_Down
         public static void ConvertRecipt_BC_Img_data(DataTable dtable, string fileName)
         {
             Encoding _encoding = System.Text.Encoding.GetEncoding(strEncoding);	//기본 인코딩	
-            StreamWriter _sw00 = null, _sw01 = null;		//파일 쓰기 스트림            
+            StreamWriter _sw00 = null, _sw01 = null, _sw02 = null;		//파일 쓰기 스트림            
             StringBuilder _strLine = new StringBuilder("");
             string _strStatus = "";
             string tempday = DateTime.Now.ToString("yyyyMMdd");
-            string strkey_Code = "", strDelivery_date = "", strCardTypeDetail = "", strCard_Branch = "", strBank_code = "";
+            string strkey_Code = "", strDelivery_date = "", strCardTypeDetail = "", strCard_Branch = "", strBank_code = "", strCardBarcode = "";
             int i = 0, itotcnt = 0;
 
             try
@@ -196,6 +196,7 @@ namespace Day_Close_Down
                 DateTime dt_date = DateTime.Parse("2020-12-17");
 
                 _sw01 = new StreamWriter(fileName + "BH490.E91." + "D" + tempday + ".dat", true, _encoding);
+                _sw02 = new StreamWriter(fileName + "BH490.E91." + "D" + tempday + "_확인용", true, _encoding);
 
                 _strLine = new StringBuilder(GetStringAsLength("H", 1, true, ' '));
                 _strLine.Append(GetStringAsLength(tempday, 8, true, ' '));
@@ -209,8 +210,9 @@ namespace Day_Close_Down
                     DateTime CardInDate = DateTime.Parse(dtable.Rows[i]["card_in_date"].ToString());
                     strCardTypeDetail = dtable.Rows[i]["card_type_detail"].ToString();
                     _strStatus = dtable.Rows[i]["card_delivery_status"].ToString();
-                    strCard_Branch = dtable.Rows[i]["card_branch_last"].ToString();
+                    strCard_Branch = dtable.Rows[i]["card_branch"].ToString();
                     strBank_code = dtable.Rows[i]["client_bank_request_no"].ToString();
+                    strCardBarcode = dtable.Rows[i]["card_barcode"].ToString();
 
                     if (CardInDate > dt_date && strBank_code == "020" && strCardTypeDetail.Substring(0,4) == "0012")
                     {
@@ -241,6 +243,10 @@ namespace Day_Close_Down
                             }
 
                             _sw01.WriteLine(_strLine.ToString());
+
+                            _strLine.Append(GetStringAsLength("," + strCardBarcode, 18, true, ' '));
+                            //리스트 확인용 바코드 추가
+                            _sw02.WriteLine(_strLine.ToString());
                         }
                     }
                 }
@@ -257,6 +263,7 @@ namespace Day_Close_Down
             finally
             {
                 if (_sw01 != null) _sw01.Close();
+                if (_sw02 != null) _sw02.Close();
             }
         }
 
