@@ -616,6 +616,7 @@ namespace _086_롯데_test
 
                             _dtable_LT.Columns.Add("card_cooperation2");        //dr[80] 묶음번호
                             _dtable_LT.Columns.Add("card_bank_ID");             //dr[81] 묶음대표
+                            _dtable_LT.Columns.Add("card_count");                  //dr[82] 묶음건수
 
                             _iSeq = 1;
 

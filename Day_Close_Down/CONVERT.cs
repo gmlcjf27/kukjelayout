@@ -188,7 +188,7 @@ namespace Day_Close_Down
             StringBuilder _strLine = new StringBuilder("");
             string _strStatus = "";
             string tempday = DateTime.Now.ToString("yyyyMMdd");
-            string strkey_Code = "", strDelivery_date = "", strCardTypeDetail = "", strCard_Branch = "", strBank_code = "", strCardBarcode = "";
+            string strkey_Code = "", strDelivery_date = "", strCardTypeDetail = "", strCard_Branch = "", strBank_code = "", strCardBarcode = "", strAP_chk = "";
             int i = 0, itotcnt = 0;
 
             try
@@ -213,8 +213,9 @@ namespace Day_Close_Down
                     strCard_Branch = dtable.Rows[i]["card_branch"].ToString();
                     strBank_code = dtable.Rows[i]["client_bank_request_no"].ToString();
                     strCardBarcode = dtable.Rows[i]["card_barcode"].ToString();
+                    strAP_chk = dtable.Rows[i]["file_name"].ToString();
 
-                    if (CardInDate > dt_date && strBank_code == "020" && strCardTypeDetail.Substring(0,4) == "0012")
+                    if (CardInDate > dt_date && strBank_code == "020" && strCardTypeDetail.Substring(0, 4) == "0012" && strAP_chk != "")
                     {
                         if (_strStatus == "1" && strCard_Branch != "012")
                         {

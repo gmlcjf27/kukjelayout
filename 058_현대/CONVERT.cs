@@ -1278,7 +1278,7 @@ namespace _058_현대
 
                         //전자동의서 개시일 12월 07일 인수데이터 부터 예정
                         //dtDong_date = DateTime.Parse("2020-12-07");
-                        
+
                         //전자동의서 이미지 리스트
                         if (strClient_register_type == "45" || strClient_register_type == "46" || strClient_register_type == "47" ||
                             strClient_register_type == "55" || strClient_register_type == "56" || strClient_register_type == "57")
@@ -1290,6 +1290,12 @@ namespace _058_현대
                             strText2 = dtable.Rows[i]["Text2"].ToString();
                             strCard_cost_code = dtable.Rows[i]["Card_cost_code"].ToString();
                             strCard_type_detail = dtable.Rows[i]["card_type_detail"].ToString();
+
+                            //filname값이"" 이면 skip
+                            if (dtable.Rows[i]["file_name"].ToString() == "")
+                            {
+                                continue;
+                            }
 
                             strChk_01 = dtable.Rows[i]["Chk_01"].ToString();
                             strChk_02 = dtable.Rows[i]["Chk_02"].ToString();
