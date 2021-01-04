@@ -1527,7 +1527,6 @@ namespace _058_현대
                             }
 
                             _strLine = new StringBuilder(strClient_send_number);
-                            _strLine.Append(GetStringAsLength(strClient_send_number, 17, true, ' ') + strCSV);
                             _sw11.WriteLine(_strLine.ToString());
 
                             _strLine = new StringBuilder(strClient_send_number + strCSV);
