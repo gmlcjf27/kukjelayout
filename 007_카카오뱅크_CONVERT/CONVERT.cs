@@ -44,8 +44,9 @@ namespace _007_카카오뱅크_CONVERT
             StreamWriter _sw = null;
             byte[] _byteAry = null;
             string _strReturn = null;
-            // _strCode : 제휴코드            
-            string _strLine = "", _strCode = "";
+            // _strCode : 제휴코드
+            // _strCode2 : 갱신여부 (일일 = 1, 추가(갱신) = 2, 정기(갱신) = 3)
+            string _strLine = "", _strCode = "", _strCode2 = "";
             // DataRow[] _drs = null;
             DataTable _dtable = null;
             DataSet _dsetZipcodeArea = null;
@@ -71,6 +72,7 @@ namespace _007_카카오뱅크_CONVERT
                     _byteAry = _encoding.GetBytes(_strLine);
                     //배송데이터형식구분 : 일반 = I, 재발송 = B
                     _strCode = _encoding.GetString(_byteAry, 1, 1);
+                    _strCode2 = _encoding.GetString(_byteAry, 0, 1);
                     //제3자수령가능여부 : 1=가능(대리수령가능), 0=불가능(본인만배송)
                     _strOwner_one = _encoding.GetString(_byteAry, 398, 1);
                     //카카오미니 2020.07.29
@@ -100,8 +102,21 @@ namespace _007_카카오뱅크_CONVERT
                     {
                         if (_strCode == "I")
                         {
-                            _sw = new StreamWriter(path + ".2000_일반", true, _encoding);
-                            _sw.WriteLine(_strLine + "0071103");
+                            if (_strCode2 == "3")
+                            {
+                                _sw = new StreamWriter(path + ".7000_갱신_정기", true, _encoding);
+                                _sw.WriteLine(_strLine + "0071105");
+                            }
+                            else if (_strCode2 == "2")
+                            {
+                                _sw = new StreamWriter(path + ".8000_갱신_추가", true, _encoding);
+                                _sw.WriteLine(_strLine + "0071106");
+                            }
+                            else
+                            {
+                                _sw = new StreamWriter(path + ".2000_일반", true, _encoding);
+                                _sw.WriteLine(_strLine + "0071103");
+                            }
                         }
                         else if (_strCode == "B")
                         {
@@ -118,8 +133,21 @@ namespace _007_카카오뱅크_CONVERT
                     {
                         if (_strCode == "I")
                         {
-                            _sw = new StreamWriter(path + ".100_일반_본인", true, _encoding);
-                            _sw.WriteLine(_strLine + "0071101");
+                            if (_strCode2 == "3")
+                            {
+                                _sw = new StreamWriter(path + ".9000_갱신_일반_본인_정기", true, _encoding);
+                                _sw.WriteLine(_strLine + "0071107");
+                            }
+                            else if (_strCode2 == "2")
+                            {
+                                _sw = new StreamWriter(path + ".10000_갱신_일반_본인_추가", true, _encoding);
+                                _sw.WriteLine(_strLine + "0071108");
+                            }
+                            else
+                            {
+                                _sw = new StreamWriter(path + ".100_일반_본인", true, _encoding);
+                                _sw.WriteLine(_strLine + "0071101");
+                            }
                         }
                         else if (_strCode == "B")
                         {

@@ -226,7 +226,7 @@ namespace _002_국민_CONVERT
                                 }
                                 else if (((_strFamilyCode == "0" || _strFamilyCode == "3") && _strOwner_one == "0") || (_strFamilyCode == "1" && _strFamily_one == "1"))
                                 {   
-                                    _sw = new StreamWriter(path + ".2000_갱신(본인)_정기", true, _encoding);
+                                    _sw = new StreamWriter(path + ".5000_갱신(본인)_정기", true, _encoding);
                                     _sw.WriteLine(_strLine + "0021105");
                                 }
                                 else
@@ -273,13 +273,29 @@ namespace _002_국민_CONVERT
                             case "N":   //갱신VVIP 
                                 if (((_strFamilyCode == "0" || _strFamilyCode == "3") && _strOwner_one == "0") || (_strFamilyCode == "1" && _strFamily_one == "1"))
                                 {
-                                    _sw = new StreamWriter(path + ".17000_광역갱신(본인)_정기", true, _encoding);
-                                    _sw.WriteLine(_strLine + "0023204");
+                                    if (strOther_chk == "01")
+                                    {
+                                        _sw = new StreamWriter(path + ".57000_KB증권_VVIP(본인)_정기", true, _encoding);
+                                        _sw.WriteLine(_strLine + "0021308");
+                                    }
+                                    else
+                                    {
+                                        _sw = new StreamWriter(path + ".17000_광역갱신(본인)_정기", true, _encoding);
+                                        _sw.WriteLine(_strLine + "0023204");
+                                    }
                                 }
                                 else
                                 {
-                                    _sw = new StreamWriter(path + ".17000_정기", true, _encoding);
-                                    _sw.WriteLine(_strLine + "0023202");
+                                    if (strOther_chk == "01")
+                                    {
+                                        _sw = new StreamWriter(path + ".56000_KB증권_VVIP_정기", true, _encoding);
+                                        _sw.WriteLine(_strLine + "0021307");
+                                    }
+                                    else
+                                    {
+                                        _sw = new StreamWriter(path + ".17000_정기", true, _encoding);
+                                        _sw.WriteLine(_strLine + "0023202");
+                                    }
                                 }
                                 break;
                             case "Y":   //광역VVIP
@@ -440,8 +456,8 @@ namespace _002_국민_CONVERT
                                 }
                                 else if (((_strFamilyCode == "0" || _strFamilyCode == "3") && _strOwner_one == "0") || (_strFamilyCode == "1" && _strFamily_one == "1"))
                                 {
-                                    _sw = new StreamWriter(path + ".2000_갱신(본인)_추가", true, _encoding);
-                                    _sw.WriteLine(_strLine + "0021105");
+                                    _sw = new StreamWriter(path + ".6000_갱신(본인)_추가", true, _encoding);
+                                    _sw.WriteLine(_strLine + "0021106");
                                 }
                                 else
                                 {
@@ -467,8 +483,8 @@ namespace _002_국민_CONVERT
                                     }
                                     else
                                     {
-                                        _sw = new StreamWriter(path + ".2000_추가", true, _encoding);
-                                        _sw.WriteLine(_strLine + "0021102");
+                                        _sw = new StreamWriter(path + ".3000_갱신_추가", true, _encoding);
+                                        _sw.WriteLine(_strLine + "0021103");
                                     }
                                 }
                                 break;
@@ -487,13 +503,29 @@ namespace _002_국민_CONVERT
                             case "N":   // VVIP
                                 if (((_strFamilyCode == "0" || _strFamilyCode == "3") && _strOwner_one == "0") || (_strFamilyCode == "1" && _strFamily_one == "1"))
                                 {
-                                    _sw = new StreamWriter(path + ".7000_VVIP(본인)_추가", true, _encoding);
-                                    _sw.WriteLine(_strLine + "0023203");
+                                    if (strOther_chk == "01")
+                                    {
+                                        _sw = new StreamWriter(path + ".57000_KB증권_VVIP(본인)_추가", true, _encoding);
+                                        _sw.WriteLine(_strLine + "0021308");
+                                    }
+                                    else
+                                    {
+                                        _sw = new StreamWriter(path + ".7000_VVIP(본인)_추가", true, _encoding);
+                                        _sw.WriteLine(_strLine + "0023203");
+                                    }
                                 }
                                 else
                                 {
-                                    _sw = new StreamWriter(path + ".7000_추가", true, _encoding);
-                                    _sw.WriteLine(_strLine + "0023201");
+                                    if (strOther_chk == "01")
+                                    {
+                                        _sw = new StreamWriter(path + ".56000_KB증권_VVIP_추가", true, _encoding);
+                                        _sw.WriteLine(_strLine + "0021307");
+                                    }
+                                    else
+                                    {
+                                        _sw = new StreamWriter(path + ".7000_추가", true, _encoding);
+                                        _sw.WriteLine(_strLine + "0023201");
+                                    }
                                 }
                                 break;
                             case "Y":   // 광역VVIP
@@ -717,13 +749,29 @@ namespace _002_국민_CONVERT
                                 {
                                     if (((_strFamilyCode == "0" || _strFamilyCode == "3") && _strOwner_one == "0") || (_strFamilyCode == "1" && _strFamily_one == "1"))
                                     {
-                                        _sw = new StreamWriter(path + ".7000_VVIP(본인)_일일", true, _encoding);
-                                        _sw.WriteLine(_strLine + "0023203");
+                                        if (strOther_chk == "01")
+                                        {
+                                            _sw = new StreamWriter(path + ".57000_KB증권_VVIP(본인)_일일", true, _encoding);
+                                            _sw.WriteLine(_strLine + "0021308");
+                                        }
+                                        else
+                                        {
+                                            _sw = new StreamWriter(path + ".7000_VVIP(본인)_일일", true, _encoding);
+                                            _sw.WriteLine(_strLine + "0023203");
+                                        }
                                     }
                                     else
                                     {
-                                        _sw = new StreamWriter(path + ".7000_일일", true, _encoding);
-                                        _sw.WriteLine(_strLine + "0023201");
+                                        if (strOther_chk == "01")
+                                        {
+                                            _sw = new StreamWriter(path + ".56000_KB증권_VVIP_일일", true, _encoding);
+                                            _sw.WriteLine(_strLine + "0021307");
+                                        }
+                                        else
+                                        {
+                                            _sw = new StreamWriter(path + ".7000_일일", true, _encoding);
+                                            _sw.WriteLine(_strLine + "0023201");
+                                        }
                                     }
                                 }
                                 break;

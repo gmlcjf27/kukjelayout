@@ -183,10 +183,6 @@ namespace _086_롯데_test
                 _dtable.Columns.Add("customer_memo");                   //dr[78] 메모문구a
                 _dtable.Columns.Add("change_add");                      //dr[79] 신분증정보
 
-                _dtable.Columns.Add("card_cooperation2");               //dr[80] 묶음번호
-                _dtable.Columns.Add("card_bank_ID");                    //dr[81] 묶음대표
-                _dtable.Columns.Add("card_count");                      //dr[82] 묶음건수
-
                 //2011-12-12 신주소 관련 추가[E]
 
                 //우편번호 관련 정보 DataSet에 담기
@@ -326,7 +322,7 @@ namespace _086_롯데_test
                     //_dr[53] = _encoding.GetString(_byteAry, 1275, 90);    // 공백
                     _dr[54] = _encoding.GetString(_byteAry, 1365, 1);
                     _dr[55] = _encoding.GetString(_byteAry, 1366, 1);
-                    _dr[56] = "";
+                    _dr[56] = _encoding.GetString(_byteAry, 1367, 60);
                     _dr[57] = _encoding.GetString(_byteAry, 1427, 150);
                     _dr[58] = _encoding.GetString(_byteAry, 1577, 60);
                     _dr[59] = _encoding.GetString(_byteAry, 1637, 150);
@@ -426,13 +422,6 @@ namespace _086_롯데_test
                     {
                         _dr[63] = strText.Trim();
                     }
-
-                    //2020.11.04
-                    //묶음배송관련 : blank = 일반건, 묶음배송키값 = 34자리
-                    _dr[80] = _encoding.GetString(_byteAry, 1367, 34);
-                    //묶음배송대표코드 : Y/N
-                    _dr[81] = _encoding.GetString(_byteAry, 1401, 1);
-                    _dr[82] = _encoding.GetString(_byteAry, 1372, 4);
 
 
                     if (_strZipcode != "")
@@ -614,10 +603,6 @@ namespace _086_롯데_test
                             _dtable_LT.Columns.Add("customer_memo");            //dr[78] 메모문구
                             _dtable_LT.Columns.Add("change_add");               //dr[79] 신분증정보
 
-                            _dtable_LT.Columns.Add("card_cooperation2");        //dr[80] 묶음번호
-                            _dtable_LT.Columns.Add("card_bank_ID");             //dr[81] 묶음대표
-                            _dtable_LT.Columns.Add("card_count");                  //dr[82] 묶음건수
-
                             _iSeq = 1;
 
                             //area_arrange_number (Total) 값을 재정의 하기 위하여 _branches를 초기화한다.
@@ -699,6 +684,7 @@ namespace _086_롯데_test
             }
             return _strReturn;
         }
+
 
 
         //마감
