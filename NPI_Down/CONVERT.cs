@@ -910,10 +910,11 @@ namespace NPI_DOWN
         private static string ConvertReceiveType5(System.Data.DataTable dtable, string fileName)
         {
             Encoding _encoding = System.Text.Encoding.GetEncoding(strEncoding);	//기본 인코딩
-            StreamWriter _sw01 = null, _sw02 = null;
-            StreamWriter _sw01_new = null, _sw02_new = null;
+            StreamWriter _sw01 = null, _sw02 = null, _sw03 = null, _sw04 = null;
+            StreamWriter _sw01_new = null, _sw02_new = null, _sw03_new = null, _sw04_new = null;
+            
             StringBuilder _strLine = new StringBuilder("");
-            string _strReturn = "", strBranch = "", strCard_agree_code = "", strZipcode = "", strZipcode_new = "", strZipcode_kind = "", strCardDetail = "";
+            string _strReturn = "", strBranch = "", strCard_agree_code = "", strZipcode = "", strZipcode_new = "", strZipcode_kind = "", strCardDetail = "", strCard_Bundle_chk = "";
             
             int i = 0;
             try
@@ -922,8 +923,14 @@ namespace NPI_DOWN
                 _sw01 = new StreamWriter(fileName + "LOTTE_OLD.txt", true, _encoding);
                 _sw02 = new StreamWriter(fileName + "LOT-D_OLD.txt", true, _encoding);
 
+                _sw03 = new StreamWriter(fileName + "LOTTE_Bundle_OLD.txt", true, _encoding);
+                _sw04 = new StreamWriter(fileName + "LOT-D_Bundle_OLD.txt", true, _encoding);
+
                 _sw01_new = new StreamWriter(fileName + "LOTTE_new.txt", true, _encoding);
                 _sw02_new = new StreamWriter(fileName + "LOT-D_new.txt", true, _encoding);
+
+                _sw03_new = new StreamWriter(fileName + "LOTTE_Bundle_new.txt", true, _encoding);
+                _sw04_new = new StreamWriter(fileName + "LOT-D_Bundle_new.txt", true, _encoding);
 
                 for (i = 0; i < dtable.Rows.Count; i++)
                 {
@@ -936,6 +943,7 @@ namespace NPI_DOWN
                     strZipcode_new = dtable.Rows[i]["card_zipcode_new"].ToString();
 
                     strCardDetail = dtable.Rows[i]["card_type_detail"].ToString();
+                    strCard_Bundle_chk = dtable.Rows[i]["card_bank_ID"].ToString();
 
                     if (strCardDetail.Length > 5 && (strCardDetail.Substring(0, 5) == "08612" || strCardDetail.Substring(0, 5) == "08622" || strCardDetail.Substring(0, 5) == "08623" || strCardDetail.Substring(0, 5) == "08624" || strCardDetail.Substring(0, 5) == "08625" || strCardDetail.Substring(0, 5) == "08631" || strCardDetail.Substring(0, 5) == "08632" || strCardDetail.Substring(0, 5) == "08633"))
                     {
@@ -945,6 +953,7 @@ namespace NPI_DOWN
 
                     //데이터생성 시작
                     _strLine = new StringBuilder(GetStringAsLength(dtable.Rows[i]["card_barcode_new"].ToString(), 22, true, ' ') + ",");
+
                     if (strZipcode_kind == "1")
                     {
                         _strLine.Append(GetStringAsLength(strZipcode_new, 5, true, ' '));
@@ -959,6 +968,22 @@ namespace NPI_DOWN
                         else
                         {
                             _sw02_new.WriteLine(_strLine.ToString());
+                        }
+
+                        //묶음배송 데이터 추가 생성
+                        if (strCard_Bundle_chk != "")
+                        {
+                            //일반, 동의 구분 : 일반 = Y, 동의서 = N
+                            //일반 (서울지사)
+                            if (strCard_agree_code == "Y" && (strBranch.Substring(0, 1) == "1" || strBranch.Substring(0, 1) == "4"))
+                            {
+                                _sw03_new.WriteLine(_strLine.ToString());
+                            }
+                            //일반 (서울외지사) + 동의서
+                            else
+                            {
+                                _sw04_new.WriteLine(_strLine.ToString());
+                            }
                         }
                     }
                     else
@@ -976,6 +1001,22 @@ namespace NPI_DOWN
                         {
                             _sw02.WriteLine(_strLine.ToString());
                         }
+
+                        //묶음배송 데이터 추가 생성
+                        if (strCard_Bundle_chk != "")
+                        {
+                            //일반, 동의 구분 : 일반 = Y, 동의서 = N
+                            //일반 (서울지사)
+                            if (strCard_agree_code == "Y" && (strBranch.Substring(0, 1) == "1" || strBranch.Substring(0, 1) == "4"))
+                            {
+                                _sw03.WriteLine(_strLine.ToString());
+                            }
+                            //일반 (서울외지사) + 동의서
+                            else
+                            {
+                                _sw04.WriteLine(_strLine.ToString());
+                            }
+                        }
                     }
                 }
                 _strReturn = string.Format("{0}건의 NPI데이타 다운 완료", i);
@@ -990,6 +1031,10 @@ namespace NPI_DOWN
                 if (_sw02 != null) _sw02.Close();
                 if (_sw01_new != null) _sw01_new.Close();
                 if (_sw02_new != null) _sw02_new.Close();
+                if (_sw03 != null) _sw03.Close();
+                if (_sw04 != null) _sw04.Close();
+                if (_sw03_new != null) _sw03_new.Close();
+                if (_sw04_new != null) _sw04_new.Close();
             }
             return _strReturn;
         }
