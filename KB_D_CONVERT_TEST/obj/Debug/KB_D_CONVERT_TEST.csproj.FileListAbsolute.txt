@@ -18,3 +18,8 @@ F:\02.회사업무\02.Projects\bin_CONVERT\KB_D_CONVERT_TEST.pdb
 F:\02.회사업무\02.Projects\02.KukJe_Layout\KB_D_CONVERT_TEST\obj\Debug\ResolveAssemblyReference.cache
 F:\02.회사업무\02.Projects\02.KukJe_Layout\KB_D_CONVERT_TEST\obj\Debug\KB_D_CONVERT_TEST.dll
 F:\02.회사업무\02.Projects\02.KukJe_Layout\KB_D_CONVERT_TEST\obj\Debug\KB_D_CONVERT_TEST.pdb
+F:\02work\02.Projects\bin_CONVERT\KB_D_CONVERT_TEST.dll
+F:\02work\02.Projects\bin_CONVERT\KB_D_CONVERT_TEST.pdb
+F:\02work\02.Projects\02.KukJe_Layout\KB_D_CONVERT_TEST\obj\Debug\ResolveAssemblyReference.cache
+F:\02work\02.Projects\02.KukJe_Layout\KB_D_CONVERT_TEST\obj\Debug\KB_D_CONVERT_TEST.dll
+F:\02work\02.Projects\02.KukJe_Layout\KB_D_CONVERT_TEST\obj\Debug\KB_D_CONVERT_TEST.pdb

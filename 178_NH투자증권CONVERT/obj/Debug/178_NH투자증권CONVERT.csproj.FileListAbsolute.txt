@@ -8,3 +8,8 @@ F:\02.회사업무\02.Projects\bin_CONVERT\178_NH투자증권CONVERT.pdb
 F:\02.회사업무\02.Projects\02.KukJe_Layout\178_NH투자증권CONVERT\obj\Debug\ResolveAssemblyReference.cache
 F:\02.회사업무\02.Projects\02.KukJe_Layout\178_NH투자증권CONVERT\obj\Debug\178_NH투자증권CONVERT.dll
 F:\02.회사업무\02.Projects\02.KukJe_Layout\178_NH투자증권CONVERT\obj\Debug\178_NH투자증권CONVERT.pdb
+F:\02work\02.Projects\bin_CONVERT\178_NH투자증권CONVERT.dll
+F:\02work\02.Projects\bin_CONVERT\178_NH투자증권CONVERT.pdb
+F:\02work\02.Projects\02.KukJe_Layout\178_NH투자증권CONVERT\obj\Debug\ResolveAssemblyReference.cache
+F:\02work\02.Projects\02.KukJe_Layout\178_NH투자증권CONVERT\obj\Debug\178_NH투자증권CONVERT.dll
+F:\02work\02.Projects\02.KukJe_Layout\178_NH투자증권CONVERT\obj\Debug\178_NH투자증권CONVERT.pdb

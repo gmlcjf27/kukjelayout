@@ -5,14 +5,12 @@ using System.Runtime.InteropServices;
 // 어셈블리의 일반 정보는 다음 특성 집합을 통해 제어됩니다.
 // 어셈블리와 관련된 정보를 수정하려면
 // 이 특성 값을 변경하십시오.
-[assembly: AssemblyTitle("SM_D_CONVERT_TEST")]
+[assembly: AssemblyTitle("004_우체국_삼성")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("(주)국제")]
-[assembly: AssemblyCompany("(주)국제")]
-[assembly: AssemblyProduct("SM_D_CONVERT_TEST")]
-[assembly: AssemblyCopyright("Copyright (C) (주)국제 2012")]
-[assembly: AssemblyCopyright("Copyright (C) (주)국제 2012")]
+[assembly: AssemblyCompany("주식회사 국제")]
+[assembly: AssemblyProduct("004samsung")]
+[assembly: AssemblyCopyright("Copyright (C) 주식회사 국제 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -22,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 이 프로젝트가 COM에 노출되는 경우 다음 GUID는 typelib의 ID를 나타냅니다.
-[assembly: Guid("97534539-5739-4a2e-bdf0-12a45021e557")]
+[assembly: Guid("68779cb8-65c6-40e9-b594-1e4c7f0fe456")]
 
 // 어셈블리의 버전 정보는 다음 네 가지 값으로 구성됩니다.
 //
@@ -33,5 +31,5 @@ using System.Runtime.InteropServices;
 //
 // 모든 값을 지정하거나 아래와 같이 '*'를 사용하여 빌드 번호 및 수정 버전이 자동으로
 // 지정되도록 할 수 있습니다.
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("21.0.0.1")]
+[assembly: AssemblyFileVersion("21.0.0.1")]

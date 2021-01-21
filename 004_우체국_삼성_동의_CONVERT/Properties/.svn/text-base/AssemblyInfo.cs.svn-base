@@ -5,14 +5,12 @@ using System.Runtime.InteropServices;
 // 어셈블리의 일반 정보는 다음 특성 집합을 통해 제어됩니다.
 // 어셈블리와 관련된 정보를 수정하려면
 // 이 특성 값을 변경하십시오.
-[assembly: AssemblyTitle("SM_D_CONVERT_TEST")]
+[assembly: AssemblyTitle("SAM_J_CONVERT")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("(주)국제")]
-[assembly: AssemblyCompany("(주)국제")]
-[assembly: AssemblyProduct("SM_D_CONVERT_TEST")]
-[assembly: AssemblyCopyright("Copyright (C) (주)국제 2012")]
-[assembly: AssemblyCopyright("Copyright (C) (주)국제 2012")]
+[assembly: AssemblyCompany("user")]
+[assembly: AssemblyProduct("SAM_J_CONVERT")]
+[assembly: AssemblyCopyright("Copyright (C) user 2007")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

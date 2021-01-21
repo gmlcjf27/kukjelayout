@@ -16,3 +16,8 @@ F:\02.회사업무\02.Projects\bin_CONVERT\AM_LOTTE_D_CONVERT.pdb
 F:\02.회사업무\02.Projects\02.KukJe_Layout\AM_LOTTE_D_CONVERT\obj\Debug\ResolveAssemblyReference.cache
 F:\02.회사업무\02.Projects\02.KukJe_Layout\AM_LOTTE_D_CONVERT\obj\Debug\AM_LOTTE_D_CONVERT.dll
 F:\02.회사업무\02.Projects\02.KukJe_Layout\AM_LOTTE_D_CONVERT\obj\Debug\AM_LOTTE_D_CONVERT.pdb
+F:\02work\02.Projects\bin_CONVERT\AM_LOTTE_D_CONVERT.dll
+F:\02work\02.Projects\bin_CONVERT\AM_LOTTE_D_CONVERT.pdb
+F:\02work\02.Projects\02.KukJe_Layout\AM_LOTTE_D_CONVERT\obj\Debug\ResolveAssemblyReference.cache
+F:\02work\02.Projects\02.KukJe_Layout\AM_LOTTE_D_CONVERT\obj\Debug\AM_LOTTE_D_CONVERT.dll
+F:\02work\02.Projects\02.KukJe_Layout\AM_LOTTE_D_CONVERT\obj\Debug\AM_LOTTE_D_CONVERT.pdb
